@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱和爱美结婚啦！</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="祝福爱和爱美喜结连理，永浴爱河！">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f9f0ff, #fff0f8);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(160, 70, 150, 0.15);
+            overflow: hidden;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            border: 2px solid #ff7eb3;
+            margin: 20px 0;
+        }
+        
+        .heart-decoration {
+            position: absolute;
+            color: #ff7eb3;
+            opacity: 0.3;
+            font-size: 24px;
+        }
+        
+        .heart-1 { top: 20px; left: 20px; }
+        .heart-2 { top: 20px; right: 20px; }
+        .heart-3 { bottom: 20px; left: 20px; }
+        .heart-4 { bottom: 20px; right: 20px; }
+        
+        .header {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            color: #ff4081;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 64, 129, 0.2);
+            background: linear-gradient(to right, #ff4081, #ff7eb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, #ff4081, #ff7eb3);
+            border-radius: 2px;
+        }
+        
+        .couple-name {
+            font-size: 2.2rem;
+            color: #ff7eb3;
+            margin: 20px 0;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .couple-name span {
+            padding: 12px 25px;
+            background-color: #fff5f9;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(255, 126, 179, 0.2);
+        }
+        
+        .heart-icon {
+            color: #ff4081;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.1); }
+            10% { transform: scale(1); }
+            15% { transform: scale(1.1); }
+            20% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .wedding-date {
+            background-color: #fff9fc;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 25px 0;
+            border: 2px dashed #ffb3d9;
+            display: inline-block;
+        }
+        
+        .wedding-date h3 {
+            color: #ff4081;
+            margin-bottom: 8px;
+        }
+        
+        .question-box {
+            background-color: #fff9fc;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px dashed #ffb3d9;
+            box-shadow: 0 8px 20px rgba(255, 126, 179, 0.1);
+        }
+        
+        .question {
+            font-size: 1.8rem;
+            color: #ff4081;
+            margin-bottom: 25px;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 45px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-yes {
+            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            color: white;
+        }
+        
+        .btn-no {
+            background: linear-gradient(to right, #FF5252, #FF4081);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .response-message {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: none;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .positive-response {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 2px solid #4CAF50;
+        }
+        
+        .negative-response {
+            background-color: #ffebee;
+            color: #c62828;
+            border: 2px solid #FF5252;
+        }
+        
+        /* 分享功能样式 */
+        .share-section {
+            background: linear-gradient(135deg, #f3e5f5, #fce4ec);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0 20px;
+            text-align: center;
+            border: 2px solid #e1bee7;
+        }
+        
+        .share-section h3 {
+            color: #7b1fa2;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .share-section p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .share-btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            min-width: 140px;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .share-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .share-wechat { background: linear-gradient(to right, #07C160, #0AAD4D); }
+        .share-qq { background: linear-gradient(to right, #12B7F5, #0A8CD2); }
+        .share-weibo { background: linear-gradient(to right, #E6162D, #C4081C); }
+        .share-link { background: linear-gradient(to right, #9C27B0, #7B1FA2); }
+        
+        .qrcode-container {
+            margin: 25px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            max-width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: none;
+        }
+        
+        .qrcode-container h4 {
+            color: #07C160;
+            margin-bottom: 15px;
+        }
+        
+        .qrcode-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ddd;
+        }
+        
+        .qrcode-placeholder i {
+            font-size: 48px;
+            color: #07C160;
+            margin-bottom: 10px;
+        }
+        
+        .copy-success {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 1rem;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer p {
+            margin: 8px 0;
+        }
+        
+        .love-quote {
+            font-style: italic;
+            color: #ff7eb3;
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 20px;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .couple-name {
+                font-size: 1.8rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                padding: 16px 30px;
+                justify-content: center;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .question {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart-decoration heart-1"><i class="fas fa-heart"></i></div>
+        <div class="heart-decoration heart-2"><i class="fas fa-heart"></i></div>
+        <div class="heart-decoration heart-3"><i class="fas fa-heart"></i></div>
+        <div class="heart-decoration heart-4"><i class="fas fa-heart"></i></div>
+        
+        <div class="header">
+            <h1 class="title">结婚喜讯</h1>
+            <div class="couple-name">
+                <span>爱美</span>
+                <i class="fas fa-heart heart-icon"></i>
+                <span>爱</span>
+            </div>
+            <p class="subtitle">我们很高兴地宣布，我们即将步入婚姻的殿堂！</p>
+            
+            <div class="wedding-date">
+                <h3>❤️ 永结同心 ❤️</h3>
+                <p>愿与你共享人生的每一刻甜蜜</p>
+            </div>
+            
+            <div class="love-quote">
+                "愿有岁月可回首，且以深情共白头"
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <h2 class="question">您是否同意爱和爱美结婚？</h2>
+            <div class="buttons">
+                <button class="btn btn-yes" id="yesBtn">
+                    <i class="fas fa-check-circle"></i> 我同意
+                </button>
+                <button class="btn btn-no" id="noBtn">
+                    <i class="fas fa-times-circle"></i> 我拒绝
+                </button>
+            </div>
+        </div>
+        
+        <div class="response-message" id="responseMessage"></div>
+        
+        <!-- 分享功能区域 -->
+        <div class="share-section">
+            <h3>分享这份喜悦</h3>
+            <p>将这份幸福分享给更多朋友，一起祝福爱和爱美！</p>
+            
+            <div class="share-buttons">
+                <button class="share-btn share-wechat" id="shareWechat">
+                    <i class="fab fa-weixin"></i> 微信
+                </button>
+                <button class="share-btn share-qq" id="shareQQ">
+                    <i class="fab fa-qq"></i> QQ
+                </button>
+                <button class="share-btn share-weibo" id="shareWeibo">
+                    <i class="fab fa-weibo"></i> 微博
+                </button>
+                <button class="share-btn share-link" id="copyLink">
+                    <i class="fas fa-link"></i> 复制链接
+                </button>
+            </div>
+            
+            <!-- 二维码显示区域 -->
+            <div class="qrcode-container" id="qrcodeContainer">
+                <h4>微信扫描二维码分享</h4>
+                <div class="qrcode-placeholder">
+                    <i class="fas fa-qrcode"></i>
+                    <p>请使用微信"扫一扫"</p>
+                    <p style="font-size: 0.8em; margin-top: 5px;">分享此页面给好友</p>
+                </div>
+                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">由于微信限制，请使用二维码分享到微信</p>
+            </div>
+            
+            <!-- 复制成功提示 -->
+            <div class="copy-success" id="copySuccessMsg">
+                <i class="fas fa-check-circle"></i> 链接已成功复制到剪贴板！
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>爱 ❤ 爱美 | 永恒的爱 | 幸福永驻</p>
+            <p>感谢所有亲朋好友的祝福与见证</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">保存此页面，永久珍藏这份美好回忆</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页面加载时显示欢迎信息
+            setTimeout(() => {
+                alert("爱和爱美结婚啦！欢迎来到我们的婚礼祝福页面！");
+            }, 500);
+            
+            // 同意按钮事件
+            document.getElementById('yesBtn').addEventListener('click', function() {
+                const responseMessage = document.getElementById('responseMessage');
+                responseMessage.textContent = "非常感谢您的祝福！愿爱与幸福永远相伴！";
+                responseMessage.className = "response-message positive-response";
+                responseMessage.style.display = "block";
+                
+                // 禁用按钮，防止重复点击
+                this.disabled = true;
+                document.getElementById('noBtn').disabled = true;
+                
+                // 添加庆祝效果
+                celebrate();
+            });
+            
+            // 拒绝按钮事件
+            document.getElementById('noBtn').addEventListener('click', function() {
+                const responseMessage = document.getElementById('responseMessage');
+                responseMessage.textContent = "我不允许！但爱情无法阻挡，请重新选择送上祝福吧！";
+                responseMessage.className = "response-message negative-response";
+                responseMessage.style.display = "block";
+                
+                // 3秒后隐藏消息
+                setTimeout(() => {
+                    responseMessage.style.display = "none";
+                }, 4000);
+                
+                // 添加拒绝效果
+                shakeQuestionBox();
+            });
+            
+            // 庆祝效果
+            function celebrate() {
+                // 改变标题颜色
+                const title = document.querySelector('.title');
+                title.style.animation = 'none';
+                setTimeout(() => {
+                    title.style.animation = 'colorChange 2s infinite alternate';
+                }, 10);
+                
+                // 添加CSS动画
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    @keyframes colorChange {
+                        0% { background-position: 0% 50%; }
+                        100% { background-position: 100% 50%; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                // 创建浮动爱心
+                for (let i = 0; i < 15; i++) {
+                    createFloatingHeart();
+                }
+            }
+            
+            // 创建浮动爱心
+            function createFloatingHeart() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                heart.style.position = 'fixed';
+                heart.style.color = '#ff4081';
+                heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                heart.style.opacity = '0.7';
+                heart.style.zIndex = '9999';
+                heart.style.pointerEvents = 'none';
+                document.body.appendChild(heart);
+                
+                // 动画
+                const animation = heart.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 0.8 },
+                    { transform: `translateY(-${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                
+                animation.onfinish = () => {
+                    heart.remove();
+                };
+            }
+            
+            // 拒绝时的震动效果
+            function shakeQuestionBox() {
+                const questionBox = document.querySelector('.question-box');
+                questionBox.style.animation = 'none';
+                setTimeout(() => {
+                    questionBox.style.animation = 'shake 0.5s';
+                }, 10);
+                
+                // 添加CSS动画
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    @keyframes shake {
+                        0%, 100% { transform: translateX(0); }
+                        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                        20%, 40%, 60%, 80% { transform: translateX(5px); }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                setTimeout(() => {
+                    style.remove();
+                }, 1000);
+            }
+            
+            // ============ 分享功能代码 ============
+            
+            // 获取当前页面信息
+            const pageUrl = window.location.href;
+            const pageTitle = '爱和爱美结婚啦！快来送上你的祝福';
+            const shareText = '爱和爱美结婚啦！我已经送上了祝福，你也快来一起祝福他们吧！';
+            
+            // 1. 微信分享（生成二维码）
+            document.getElementById('shareWechat').addEventListener('click', function() {
+                const container = document.getElementById('qrcodeContainer');
+                
+                // 切换显示/隐藏
+                if (container.style.display === 'none' || container.style.display === '') {
+                    container.style.display = 'block';
+                    // 隐藏其他提示
+                    document.getElementById('copySuccessMsg').style.display = 'none';
+                } else {
+                    container.style.display = 'none';
+                }
+            });
+            
+            // 2. QQ分享
+            document.getElementById('shareQQ').addEventListener('click', function() {
+                const qqUrl = `https://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(pageTitle)}&summary=${encodeURIComponent(shareText)}&pics=${encodeURIComponent('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')}`;
+                window.open(qqUrl, '_blank', 'width=615,height=530');
+            });
+            
+            // 3. 微博分享
+            document.getElementById('shareWeibo').addEventListener('click', function() {
+                const weiboUrl = `https://service.weibo.com/share/share.php?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(shareText)}`;
+                window.open(weiboUrl, '_blank', 'width=615,height=530');
+            });
+            
+            // 4. 复制链接
+            document.getElementById('copyLink').addEventListener('click', function() {
+                // 隐藏二维码
+                document.getElementById('qrcodeContainer').style.display = 'none';
+                
+                // 使用现代剪贴板API
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(pageUrl + '\n' + shareText)
+                        .then(() => showCopySuccess())
+                        .catch(() => fallbackCopy(pageUrl));
+                } else {
+                    fallbackCopy(pageUrl);
+                }
+            });
+            
+            // 显示复制成功提示
+            function showCopySuccess() {
+                const msg = document.getElementById('copySuccessMsg');
+                msg.style.display = 'block';
+                setTimeout(() => {
+                    msg.style.display = 'none';
+                }, 3000);
+            }
+            
+            // 传统复制方法（兼容旧浏览器）
+            function fallbackCopy(text) {
+                const textArea = document.createElement('textarea');
+                textArea.value = text + '\n' + shareText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopySuccess();
+                } catch (err) {
+                    alert('复制失败，请手动复制链接：\n\n' + text + '\n\n' + shareText);
+                }
+                document.body.removeChild(textArea);
+            }
+            
+            // 页面加载后自动隐藏二维码
+            document.getElementById('qrcodeContainer').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
